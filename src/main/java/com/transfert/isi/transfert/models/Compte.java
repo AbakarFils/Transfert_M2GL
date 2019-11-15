@@ -14,9 +14,11 @@ public class Compte {
     @JoinColumn(name = "partenaire_id" , nullable = false)
     private Partenaire partenaire;
 
-    @OneToMany(mappedBy = "utilisteur")
-    private List<Compte> comptes;
+    @OneToMany(mappedBy = "compte")
+    private List<Utilisateur> utilisateurs;
 
+    @OneToMany(mappedBy = "compte")
+    private List<Versement> versements;
 
 
     public Compte() {
@@ -57,5 +59,33 @@ public class Compte {
 
     public void setPartenaire(Partenaire partenaire) {
         this.partenaire = partenaire;
+    }
+
+    public List<Utilisateur> getUtilisateurs() {
+        return utilisateurs;
+    }
+
+    public void setUtilisateurs(List<Utilisateur> utilisateurs) {
+        this.utilisateurs = utilisateurs;
+    }
+
+    public List<Versement> getVersements() {
+        return versements;
+    }
+
+    public void setVersements(List<Versement> versements) {
+        this.versements = versements;
+    }
+
+    @Override
+    public String toString() {
+        return "Compte{" +
+            "id=" + id +
+            ", numero='" + numero + '\'' +
+            ", solde=" + solde +
+            ", partenaire=" + partenaire +
+            ", utilisateurs=" + utilisateurs +
+            ", versements=" + versements +
+            '}';
     }
 }

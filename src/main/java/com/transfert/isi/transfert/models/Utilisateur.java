@@ -1,6 +1,7 @@
 package com.transfert.isi.transfert.models;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Utilisateur {
@@ -21,4 +22,28 @@ public class Utilisateur {
     @ManyToOne
     @JoinColumn(name = "compte_id")
     private Compte compte;
+
+    @OneToMany(mappedBy = "userDestinateur")
+    private List<Transaction> transactionsOfUserDestinateur;
+
+
+    @OneToMany(mappedBy = "userExpediteur")
+    private List<Transaction> transactionsOfUserExpediteur;
+
+    @Override
+    public String toString() {
+        return "Utilisateur{" +
+            "id=" + id +
+            ", login='" + login + '\'' +
+            ", password='" + password + '\'' +
+            ", nomComplet='" + nomComplet + '\'' +
+            ", email='" + email + '\'' +
+            ", photo='" + photo + '\'' +
+            ", profil='" + profil + '\'' +
+            ", partenaire=" + partenaire +
+            ", compte=" + compte +
+            ", transactionsOfUserDestinateur=" + transactionsOfUserDestinateur +
+            ", transactionsOfUserExpediteur=" + transactionsOfUserExpediteur +
+            '}';
+    }
 }

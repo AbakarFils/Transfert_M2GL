@@ -87,4 +87,17 @@ public class Partenaire {
     public void setComptes(List<Compte> comptes) {
         this.comptes = comptes;
     }
+
+    @Override
+    public String toString() {
+        return "Partenaire{" +
+            "id=" + id +
+            ", nom='" + nom + '\'' +
+            ", adresse='" + adresse + '\'' +
+            ", email='" + email + '\'' +
+            ", tel='" + tel + '\'' +
+            ", ninea='" + ninea + '\'' +
+            ", comptes=" + comptes +
+            '}';
+    }
 }
