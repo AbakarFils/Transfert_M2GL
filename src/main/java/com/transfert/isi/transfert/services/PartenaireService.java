@@ -46,7 +46,7 @@ public interface PartenaireService {
      * @param id the id of the entity
      * @return the entity with all Eager
      */
-    Optional<Partenaire> findOneWithEager(Long id);
+    Optional<Partenaire> findOneWithEager(Integer id);
 
     /**
      * Delete the "id" Partenaire.

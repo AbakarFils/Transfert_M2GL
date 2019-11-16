@@ -42,8 +42,8 @@ public class PartenaireServicesImpl implements PartenaireService {
     }
 
     @Override
-    public Optional<Partenaire> findOneWithEager(Long id) {
-        return Optional.empty();
+    public Optional<Partenaire> findOneWithEager(Integer id) {
+        return partenaireRepository.findOneWithEager(id);
     }
 
     @Override
