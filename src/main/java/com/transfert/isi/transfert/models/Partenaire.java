@@ -1,6 +1,7 @@
 package com.transfert.isi.transfert.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Entity
@@ -9,6 +10,8 @@ public class Partenaire {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
+    @NotBlank(message = "Name is require")
     private String nom;
     private String adresse;
     private String email;
@@ -17,7 +20,6 @@ public class Partenaire {
 
     @OneToMany(mappedBy = "partenaire")
     private List<Compte> comptes;
-
 
 
     public Partenaire() {
