@@ -1,11 +1,9 @@
 package com.transfert.isi.transfert.models;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.List;
 
+@Entity
 public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
