@@ -59,4 +59,14 @@ public class IndexController {
         model.addAttribute("partenaires", partenaireService.findAll(pageable));
         return "index";
     }
+
+
+    @GetMapping("/delete/{id}")
+    public String deletePartenaire(@PathVariable("id") Integer id, Model model, Pageable pageable) {
+        Partenaire partenaire = partenaireService.findOne(id)
+            .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
+        partenaireService.delete(partenaire);
+        model.addAttribute("partenaires", partenaireService.findAll(pageable));
+        return "index";
+    }
 }

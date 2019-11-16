@@ -47,8 +47,8 @@ public class PartenaireServicesImpl implements PartenaireService {
     }
 
     @Override
-    public void delete(Long id) {
-
+    public void delete(Partenaire partenaire) {
+        partenaireRepository.delete(partenaire);
     }
 
 }

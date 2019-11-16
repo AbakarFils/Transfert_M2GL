@@ -51,8 +51,8 @@ public interface PartenaireService {
     /**
      * Delete the "id" Partenaire.
      *
-     * @param id the id of the entity
+     * @param partenaire  the entity
      */
-    void delete(Long id);
+    void delete(Partenaire partenaire);
 
 }
