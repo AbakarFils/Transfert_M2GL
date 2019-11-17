@@ -18,23 +18,23 @@ public class Transaction {
     private String code;
 
     @ManyToOne
-    @JoinColumn(name = "expediteur_id" , nullable = false)
+    @JoinColumn(name = "expediteur_id", nullable = false)
     private Client expediteur;
 
     @ManyToOne
-    @JoinColumn(name = "commission_id" , nullable = false)
+    @JoinColumn(name = "commission_id", nullable = false)
     private Commission commission;
 
     @ManyToOne
-    @JoinColumn(name = "destinateur_id" , nullable = false)
+    @JoinColumn(name = "destinateur_id", nullable = false)
     private Client destinateur;
 
     @ManyToOne
-    @JoinColumn(name = "user_destinateur_id" , nullable = false)
+    @JoinColumn(name = "user_destinateur_id", nullable = false)
     private Utilisateur userDestinateur;
 
     @ManyToOne
-    @JoinColumn(name = "user_expediteur_id" , nullable = false)
+    @JoinColumn(name = "user_expediteur_id", nullable = false)
     private Utilisateur userExpediteur;
 
     public Transaction() {

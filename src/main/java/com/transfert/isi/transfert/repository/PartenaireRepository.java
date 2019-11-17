@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface PartenaireRepository  extends JpaRepository<Partenaire, Integer> {
+public interface PartenaireRepository extends JpaRepository<Partenaire, Integer> {
 
     @Query("select partenaire from Partenaire partenaire left join fetch partenaire.comptes where partenaire.id =:id")
     Optional<Partenaire> findOneWithEager(@Param("id") Integer id);

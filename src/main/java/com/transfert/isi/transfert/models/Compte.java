@@ -11,7 +11,7 @@ public class Compte {
     private String numero;
     private Integer solde;
     @ManyToOne
-    @JoinColumn(name = "partenaire_id" , nullable = false)
+    @JoinColumn(name = "partenaire_id", nullable = false)
     private Partenaire partenaire;
 
     @OneToMany(mappedBy = "compte")

@@ -24,7 +24,6 @@ public interface PartenaireService {
      */
     Page<Partenaire> findAll(Pageable pageable);
     /**
-
      * Get all the Partenaires.
      *
      * @return the list of entities
@@ -51,7 +50,7 @@ public interface PartenaireService {
     /**
      * Delete the "id" Partenaire.
      *
-     * @param partenaire  the entity
+     * @param partenaire the entity
      */
     void delete(Partenaire partenaire);
 

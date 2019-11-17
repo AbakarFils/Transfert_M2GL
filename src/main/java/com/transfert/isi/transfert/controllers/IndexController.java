@@ -20,15 +20,15 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String index( Model model, Pageable pageable) {
+    public String index(Model model, Pageable pageable) {
         Partenaire partenaire = new Partenaire();
         model.addAttribute("partenaire", partenaire);
         model.addAttribute("partenaires", partenaireService.findAll(pageable));
-        return "index";
+        return "sys/v_dashboard";
     }
 
-    @PostMapping(value= "/")
-    public String create(@Valid Partenaire partenaire, BindingResult result, Model model, Pageable pageable){
+    @PostMapping(value = "/")
+    public String create(@Valid Partenaire partenaire, BindingResult result, Model model, Pageable pageable) {
         if (result.hasErrors()) {
             return "index";
         }
@@ -39,7 +39,7 @@ public class IndexController {
 
     @GetMapping("/edit/{id}")
     public String showUpdateForm(@PathVariable("id") Integer id, Model model) {
-        Partenaire partenaire =  partenaireService.findOne(id)
+        Partenaire partenaire = partenaireService.findOne(id)
             .orElseThrow(() -> new IllegalArgumentException("Invalid user Id:" + id));
 
         model.addAttribute("partenaire", partenaire);
@@ -49,7 +49,7 @@ public class IndexController {
     @PostMapping("/update/{id}")
     public String updatePartenaire(@PathVariable("id") Integer id, @Valid Partenaire partenaire,
                                    Pageable pageable,
-                             BindingResult result, Model model) {
+                                   BindingResult result, Model model) {
         if (result.hasErrors()) {
             partenaire.setId(id);
             return "update-user";
