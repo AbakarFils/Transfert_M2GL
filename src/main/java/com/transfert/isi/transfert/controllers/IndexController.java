@@ -24,8 +24,8 @@ public class IndexController {
         Partenaire partenaire = new Partenaire();
         model.addAttribute("partenaire", partenaire);
         model.addAttribute("partenaires", partenaireService.findAll(pageable));
-        return
-            "sys/v_dashboard";
+        return  "index";
+           // "sys/v_dashboard";
     }
 
     @PostMapping(value = "/")
