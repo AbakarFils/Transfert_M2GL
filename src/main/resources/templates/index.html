@@ -10,64 +10,66 @@
 <body>
 <h2>Parterner</h2>
 <div class="container">
-    <form action="#" th:action="@{/}" th:object="${partenaire}" method="post">
-        <div class="form-group">
-            <label class="form-label" for="nom">Nom</label>
-            <input class="form-control" type="text" th:field="*{nom}" id="nom" placeholder="nom">
-            <span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></span>
-        </div>
+    <div class="row">
+        <div class="col-sm-6">
+            <form action="#" th:action="@{/}" th:object="${partenaire}" method="post">
+                <div class="form-group">
+                    <label class="form-label" for="nom">Nom</label>
+                    <input class="form-control" type="text" th:field="*{nom}" id="nom" placeholder="nom">
+                    <span th:if="${#fields.hasErrors('nom')}" th:errors="*{nom}"></span>
+                </div>
 
-        <div class="form-group">
-            <label for="adresse">Adresse</label>
-            <input type="text" class="form-control" th:field="*{adresse}" id="adresse" placeholder="adresse">
-            <span th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"></span>
-        </div>
+                <div class="form-group">
+                    <label for="adresse">Adresse</label>
+                    <input type="text" class="form-control" th:field="*{adresse}" id="adresse" placeholder="adresse">
+                    <span th:if="${#fields.hasErrors('adresse')}" th:errors="*{adresse}"></span>
+                </div>
 
-        <div class="form-group">
-            <label for="tel">tel</label>
-            <input type="text" class="form-control" th:field="*{tel}" id="tel" placeholder="telephone">
-            <span th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"></span>
-        </div>
+                <div class="form-group">
+                    <label for="tel">tel</label>
+                    <input type="text" class="form-control" th:field="*{tel}" id="tel" placeholder="telephone">
+                    <span th:if="${#fields.hasErrors('tel')}" th:errors="*{tel}"></span>
+                </div>
 
-        <div class="form-group">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Email">
-            <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="text" class="form-control" th:field="*{email}" id="email" placeholder="Email">
+                    <span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+                </div>
+                <div class="form-group">
+                    <label for="ninea">Ninea</label>
+                    <input type="text" class="form-control" th:field="*{ninea}" id="ninea" placeholder="Email">
+                    <span th:if="${#fields.hasErrors('ninea')}" th:errors="*{ninea}"></span>
+                </div>
+                <button type="submit"  class="btn btn-primary">Add partenaire</button>
+            </form>
         </div>
-        <div class="form-group">
-            <label for="ninea">Ninea</label>
-            <input type="text" class="form-control" th:field="*{ninea}" id="ninea" placeholder="Email">
-            <span th:if="${#fields.hasErrors('ninea')}" th:errors="*{ninea}"></span>
-        </div>
-        <input type="submit" value="Add partenaire">
-    </form>
-
-    <br>
-    <hr>
-    <div th:switch="${partenaires}">
-        <h2 th:case="null">No partenaires yet!</h2>
-        <div th:case="*">
-            <h2>partenaires</h2>
-            <table>
-                <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Edit</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="part : ${partenaires}">
-                    <td th:text="${part.nom}"></td>
-                    <td th:text="${part.email}"></td>
-                    <td><a th:href="@{/edit/{id}(id=${part.id})}">Edit</a></td>
-                    <td><a th:href="@{/delete/{id}(id=${part.id})}">Delete</a></td>
-                </tr>
-                </tbody>
-            </table>
+        <div class="col-sm-6" th:switch="${partenaires}">
+            <h2 th:case="null">No partenaires yet!</h2>
+            <div th:case="*">
+                <h2>partenaires</h2>
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="part : ${partenaires}">
+                        <td th:text="${part.nom}"></td>
+                        <td th:text="${part.email}"></td>
+                        <td><a th:href="@{/edit/{id}(id=${part.id})}">Edit</a></td>
+                        <td><a th:href="@{/delete/{id}(id=${part.id})}">Delete</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
+
 </div>
 </body>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
