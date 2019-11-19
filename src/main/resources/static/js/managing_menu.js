@@ -16,7 +16,7 @@ $('.waves-effect').click(function (a) {
 
 
 $("body").on("click", ".menu", function () {
-
+    alert('bonjour')
     if($(this).attr('id') == undefined)
         return false;
 

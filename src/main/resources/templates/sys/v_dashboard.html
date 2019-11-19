@@ -8,7 +8,7 @@
     <meta content="Transfert" name="author" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    <link rel="shortcut icon" href="../../static/images/logo.jpg" th:href="@{/images/logo.jpg}">
+    <link rel="shortcut icon" href="../../static/images/wari.png" th:href="@{/images/wari.png}">
 
     <link href="../../static/plugins/sweetalert/dist/sweetalert.css" rel="stylesheet"
           th:href="@{/plugins/sweetalert/dist/sweetalert.css}"
@@ -22,7 +22,7 @@
     <link href="../../static/css/menu.css" th:href="@{/css/menu.css}" rel="stylesheet" type="text/css">
     <link href="../../static/css/responsive.css" th:href="@{/css/responsive.css}" rel="stylesheet" type="text/css">
 
-    <script src="../../static/js/modernizr.min.js" th:href="@{/js/modernizr.min.js}"></script>
+    <script src="../../static/js/modernizr.min.js" th:src=="@{/js/modernizr.min.js}"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -45,8 +45,8 @@
         <!-- LOGO -->
         <div class="topbar-left">
             <div class="text-center">
-                <a href="/" class="logo"><img src="../../static/images/logo.jpg"
-                                              th:href="@{/images/logo.jpg}"
+                <a href="/" class="logo"><img src="../../static/images/wari.png"
+                                              th:src=="@{/images/wari.png}"
                                               style="width: 32px; "> <span>Transfert</span></a>
             </div>
         </div>
@@ -129,7 +129,7 @@
                             <a href="#" class="right-bar-toggle waves-effect waves-light"><i class="side-bar right-bar nicescroll"></i></a>
                         </li>
                         <li class="dropdown">
-                            <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="../../static/images/<?php if($user->sexe == 'M') echo 'user_male.png'; else 'user_female.png' ?>" alt="user-img" class="img-circle"> </a>
+                            <a href="" class="dropdown-toggle profile" data-toggle="dropdown" aria-expanded="true"><img src="../../static/images/users/avatar-1.jpg" th:src="@{/images/users/avatar-1.jpg}" alt="user-img" class="img-circle"> </a>
                             <ul class="dropdown-menu">
                                 <li><a href="<?php echo site_url('se_deconnecter') ?>"><i class="md md-settings-power"></i> Se déconnecter</a></li>
                             </ul>
@@ -173,15 +173,16 @@
                         <ul class="list-unstyled">
                             <li><a href="avascript:void(0);" link="<?php echo site_url('C_profil'); ?>" class="menu" id="menu_profil"><i class="fa fa-navicon"></i> Profil</a></li>
                             <li><a href="avascript:void(0);" link="<?php echo site_url('C_user'); ?>"  class="menu" id="menu_user"><i class="fa fa-users"></i> Utilisateur</a></li>
+                            <li><a href="avascript:void(0);" link="<?php echo site_url('C_user'); ?>"  class="menu" id="menu_users"><i class="fa fa-users"></i> Clients</a></li>
                         </ul>
                     </li>
                     <li class="has_sub">
-                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-database"></i><span> championnat </span><span class="pull-right"><i class="md md-add"></i></span></a>
+                        <a href="javascript:void(0);" class="waves-effect"><i class="fa fa-database"></i><span> Services </span><span class="pull-right"><i class="md md-add"></i></span></a>
                         <ul class="list-unstyled">
-                            <li><a href="javascript:void(0);"  link="/" class="menu" id="equipe"><i class="fa fa-navicon"></i> Equipe</a></li>
-                            <li><a href="javascript:void(0);"  link="/"  class="menu" id="match"><i class="fa fa-soccer-ball-o"></i> Match</a></li>
-                            <li><a href="javascript:void(0);"  link="/"  class="menu" id="classement"><i class="fa fa-sort-numeric-asc"></i> Classements</a></li>
-                            <li><a href="javascript:void(0);"  link="/"  class="menu" id="stade"><i class="fa fa-money"></i> Stade</a></li>
+                            <li><a href="javascript:void(0);"  th:href="@{/edit/3}"  class="menu" id="equipe"><i class="fa fa-navicon"></i> Comptes</a></li>
+                            <li><a href="javascript:void(0);"  link="/transfert/edit/1"  class="menu" id="match"><i class="fa fa-soccer-ball-o"></i> Commissions</a></li>
+                            <li><a href="javascript:void(0);"  link="/"  class="menu" id="classement"><i class="fa fa-sort-numeric-asc"></i> Transactions</a></li>
+                            <li><a href="javascript:void(0);"  link="/"  class="menu" id="stade"><i class="fa fa-money"></i> Versements</a></li>
                         </ul>
                     </li>
 
@@ -279,7 +280,7 @@
                         <div class="mini-stat clearfix bx-shadow bg-white">
                             <span class="mini-stat-icon bg-primary"><i class="fa fa-download"></i></span>
                             <div class="mini-stat-info text-right text-dark">
-                                <span class="counter text-dark">34</span>
+                                <span class="counter text-dark">4</span>
                                 total buts incrit
                             </div>
                             <div class="tiles-progress">
@@ -353,37 +354,37 @@
 
 
 
-    <script>
+    <script type="text/javascript">
         var resizefunc = [];
     </script>
 
     <!-- jQuery  -->
-    <script src="../../static/js/jquery.min.js" th:href="@{/js/jquery.min.js}"></script>
-    <script src="../../static/js/bootstrap.min.js" th:href="@{/js/bootstrap.min.js}"></script>
-    <script src="../../static/js/detect.js" th:href="@{/js/detect.js}"></script>
-    <script src="../../static/js/fastclick.js" th:href="@{/js/fastclick.js}"></script>
-    <script src="../../static/js/jquery.slimscroll.js" th:href="@{/js/jquery.slimscroll.js}"></script>
-    <script src="../../static/js/jquery.blockUI.js" th:href="@{/js/jquery.blockUI.js}"></script>
-    <script src="../../static/js/waves.js" th:href="@{/js/waves.js}"></script>
-    <script src="../../static/js/wow.min.js" th:href="@{/js/wow.min.js}"></script>
-    <script src="../../static/js/jquery.nicescroll.js" th:href="@{/js/jquery.nicescroll.js}"></script>
-    <script src="../../static/js/jquery.scrollTo.min.js" th:href="@{/js/jquery.scrollTo.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.min.js" th:src=="@{/js/jquery.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/bootstrap.min.js" th:src=="@{/js/bootstrap.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/detect.js" th:src=="@{/js/detect.js}"></script>
+    <script type="text/javascript" src="../../static/js/fastclick.js" th:src=="@{/js/fastclick.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.slimscroll.js" th:src=="@{/js/jquery.slimscroll.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.blockUI.js" th:src=="@{/js/jquery.blockUI.js}"></script>
+    <script type="text/javascript" src="../../static/js/waves.js" th:src=="@{/js/waves.js}"></script>
+    <script type="text/javascript" src="../../static/js/wow.min.js" th:src=="@{/js/wow.min.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.nicescroll.js" th:src=="@{/js/jquery.nicescroll.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.scrollTo.min.js" th:src=="@{/js/jquery.scrollTo.min.js}"></script>
 
-    <script src="../../static/js/jquery.app.js" th:href="@{/js/jquery.app.js}"></script>
-
-    <!-- jQuery  -->
-    <script src="../../static/plugins/moment/moment.js" th:href="@{/plugins/moment/moment.js}"></script>
+    <script type="text/javascript" src="../../static/js/jquery.app.js" th:src=="@{/js/jquery.app.js}"></script>
 
     <!-- jQuery  -->
-    <script src="../../static/plugins/waypoints/lib/jquery.waypoints.js" th:href="@{/plugins/waypoints/lib/jquery.waypoints.js}"></script>
-    <script src="../../static/plugins/counterup/jquery.counterup.min.js" th:href="@{/plugins/counterup/jquery.counterup.min.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/moment/moment.js" th:src=="@{/plugins/moment/moment.js}"></script>
 
     <!-- jQuery  -->
-    <script src="../../static/plugins/sweetalert/dist/sweetalert.min.js" th:href="@{/plugins/sweetalert/dist/sweetalert.min.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/waypoints/lib/jquery.waypoints.js" th:src=="@{/plugins/waypoints/lib/jquery.waypoints.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/counterup/jquery.counterup.min.js" th:src=="@{/plugins/counterup/jquery.counterup.min.js}"></script>
+
+    <!-- jQuery  -->
+    <script type="text/javascript" src="../../static/plugins/sweetalert/dist/sweetalert.min.js" th:src=="@{/plugins/sweetalert/dist/sweetalert.min.js}"></script>
 
 
-    <script src="../../static/js/highcharts.js" th:href="@{/js/highcharts.js}"></script>
-    <script>
+    <script type="text/javascript" src="../../static/js/highcharts.js" th:src=="@{/js/highcharts.js}"></script>
+    <script type="text/javascript">
         Highcharts.chart('areachart', {
             chart: {
                 type: 'area',
@@ -465,24 +466,24 @@
     <link href="../../static/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css"
           th:href="@{/plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css}"
           rel="stylesheet">
-    <script src="../../static/plugins/jquery-datatable/jquery.dataTables.js" th:href="@{/plugins/jquery-datatable/jquery.dataTables.js}"></script>
-    <script src="../../static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js" th:href="@{/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/jquery-datatable/jquery.dataTables.js" th:src=="@{/plugins/jquery-datatable/jquery.dataTables.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js" th:src=="@{/plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js}"></script>
 
 
     <!-- jQuery Validate Plugin -->
-    <script src="../../static/plugins/jquery-validation/dist/jquery.validate.min.js" th:href="@{/plugins/jquery-validation/dist/jquery.validate.min.js}"></script>
-    <script src="../../static/plugins/jquery-validation/src/localization/messages_fr.js" th:href="@{/jquery-validation/src/localization/messages_fr.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/jquery-validation/dist/jquery.validate.min.js" th:src=="@{/plugins/jquery-validation/dist/jquery.validate.min.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/jquery-validation/src/localization/messages_fr.js" th:src=="@{/jquery-validation/src/localization/messages_fr.js}"></script>
 
 
     <!-- notification js-->
     <link href="../../static/plugins/notifications/notification.css"  th:href="@{/plugins/notifications/notification.css}"rel="stylesheet">
-    <script src="../../static/plugins/notifyjs/dist/notify.min.js" th:href="@{/plugins/notifyjs/dist/notify.min.js}"></script>
-    <script src="../../static/plugins/notifications/notify-metro.js" th:href="@{/plugins/notifications/notify-metro.js}"></script>
-    <script src="../../static/plugins/notifications/notifications.js" th:href="@{/plugins/notifications/notifications.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/notifyjs/dist/notify.min.js" th:src=="@{/plugins/notifyjs/dist/notify.min.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/notifications/notify-metro.js" th:src=="@{/plugins/notifications/notify-metro.js}"></script>
+    <script type="text/javascript" src="../../static/plugins/notifications/notifications.js" th:src=="@{/plugins/notifications/notifications.js}"></script>
 
 
-    <script src="../../static/js/managing_menu.js" th:href="@{/js/managing_menu.js}"></script>
-    <script src="../../static/js/managing_ajax.js" th:href="@{/js/managing_ajax.js}"></script>
+    <script type="text/javascript" src="../../static/js/managing_menu.js" th:src=="@{/js/managing_menu.js}"></script>
+    <script type="text/javascript" src="../../static/js/managing_ajax.js" th:src=="@{/js/managing_ajax.js}"></script>
 
     <style type="text/css">
         label.error {
@@ -497,8 +498,8 @@
         }
 
     </style>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
